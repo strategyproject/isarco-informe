@@ -15,8 +15,6 @@
             font-family: sans-serif;
             background-color: white;
             padding: 20px;
-        }
-        .container {
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -26,83 +24,118 @@
             color: #333;
             font-size: 28px;
         }
-        .piso {
-            margin-bottom: 20px;
+        .edificio {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 15px;
+            margin-bottom: 40px;
         }
-        .piso-titulo {
+        .piso {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .piso-label {
             font-weight: bold;
-            margin-bottom: 10px;
+            min-width: 60px;
             color: #333;
-            font-size: 18px;
+            font-size: 14px;
         }
         .apartamentos {
             display: grid;
             grid-template-columns: repeat(8, 1fr);
             gap: 10px;
+            flex: 1;
         }
         .apartamento {
             border: 2px solid #ddd;
             border-radius: 8px;
-            padding: 15px;
+            padding: 15px 10px;
             text-align: center;
             min-height: 80px;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            gap: 5px;
+        }
+        .apartamento.instalado {
+            background-color: #C0DD97;
+            color: #27500A;
+            border-color: #27500A;
+        }
+        .apartamento.en-proceso {
+            background-color: #FAC775;
+            color: #633806;
+            border-color: #633806;
+        }
+        .apartamento.pendiente {
+            background-color: #f0f0f0;
+            color: #888888;
+            border-color: #888888;
         }
         .numero {
+            font-size: 20px;
             font-weight: bold;
-            font-size: 18px;
-            margin-bottom: 5px;
         }
         .estado {
             font-size: 12px;
         }
-        .instalado {
-            background-color: #C0DD97;
-            color: #27500A;
-        }
-        .en-proceso {
-            background-color: #FAC775;
-            color: #633806;
-        }
-        .pendiente {
-            background-color: #f0f0f0;
-            color: #888888;
-        }
         .contador {
-            margin-top: 40px;
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 30px;
             flex-wrap: wrap;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
         }
         .contador-item {
             text-align: center;
-            padding: 15px 30px;
+            padding: 15px 25px;
             border-radius: 8px;
-            border: 2px solid #ddd;
+            border: 2px solid;
+        }
+        .contador-item.instalado {
+            background-color: #C0DD97;
+            color: #27500A;
+            border-color: #27500A;
+        }
+        .contador-item.en-proceso {
+            background-color: #FAC775;
+            color: #633806;
+            border-color: #633806;
+        }
+        .contador-item.pendiente {
+            background-color: #f0f0f0;
+            color: #888888;
+            border-color: #888888;
         }
         .contador-numero {
             font-size: 32px;
             font-weight: bold;
-            margin-bottom: 5px;
         }
         .contador-label {
             font-size: 14px;
-            text-transform: uppercase;
+            margin-top: 5px;
         }
         @media (max-width: 768px) {
             .apartamentos {
                 grid-template-columns: repeat(4, 1fr);
                 gap: 8px;
             }
+            .piso {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .piso-label {
+                margin-bottom: 5px;
+            }
             .apartamento {
-                padding: 10px;
-                min-height: 60px;
+                min-height: 70px;
+                padding: 10px 5px;
             }
             .numero {
-                font-size: 14px;
+                font-size: 16px;
             }
             .estado {
                 font-size: 10px;
@@ -111,10 +144,7 @@
                 font-size: 22px;
             }
             .contador {
-                gap: 20px;
-            }
-            .contador-item {
-                padding: 10px 20px;
+                gap: 15px;
             }
             .contador-numero {
                 font-size: 24px;
@@ -128,26 +158,76 @@
     </style>
 </head>
 <body>
-    <div class='container'>
-        <h1>ISARCO - Estado de Obra</h1>
-        <div class='mensaje' style='text-align: center; color: #888; padding: 40px;'>
-            No hay datos de apartamentos disponibles
+    <h1>ISARCO - Estado de Obra</h1>
+    
+    <div class='edificio'>
+        <div class='piso'>
+            <div class='piso-label'>Piso 1</div>
+            <div class='apartamentos'>
+                <div class='apartamento instalado'>
+                    <div class='numero'>101</div>
+                    <div class='estado'>Instalado</div>
+                </div>
+                <div class='apartamento instalado'>
+                    <div class='numero'>102</div>
+                    <div class='estado'>Instalado</div>
+                </div>
+                <div class='apartamento instalado'>
+                    <div class='numero'>103</div>
+                    <div class='estado'>Instalado</div>
+                </div>
+                <div class='apartamento instalado'>
+                    <div class='numero'>104</div>
+                    <div class='estado'>Instalado</div>
+                </div>
+                <div class='apartamento instalado'>
+                    <div class='numero'>105</div>
+                    <div class='estado'>Instalado</div>
+                </div>
+                <div class='apartamento instalado'>
+                    <div class='numero'>106</div>
+                    <div class='estado'>Instalado</div>
+                </div>
+                <div class='apartamento instalado'>
+                    <div class='numero'>107</div>
+                    <div class='estado'>Instalado</div>
+                </div>
+                <div class='apartamento instalado'>
+                    <div class='numero'>108</div>
+                    <div class='estado'>Instalado</div>
+                </div>
+            </div>
         </div>
-        <div class='contador'>
-            <div class='contador-item instalado'>
-                <div class='contador-numero'>0</div>
-                <div class='contador-label'>Instalados</div>
-            </div>
-            <div class='contador-item en-proceso'>
-                <div class='contador-numero'>0</div>
-                <div class='contador-label'>En Proceso</div>
-            </div>
-            <div class='contador-item pendiente'>
-                <div class='contador-numero'>0</div>
-                <div class='contador-label'>Pendientes</div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
-```
+        
+        <div class='piso'>
+            <div class='piso-label'>Piso 2</div>
+            <div class='apartamentos'>
+                <div class='apartamento instalado'>
+                    <div class='numero'>201</div>
+                    <div class='estado'>Instalado</div>
+                </div>
+                <div class='apartamento pendiente'>
+                    <div class='numero'>202</div>
+                    <div class='estado'>Pendiente</div>
+                </div>
+                <div class='apartamento instalado'>
+                    <div class='numero'>203</div>
+                    <div class='estado'>Instalado</div>
+                </div>
+                <div class='apartamento instalado'>
+                    <div class='numero'>204</div>
+                    <div class='estado'>Instalado</div>
+                </div>
+                <div class='apartamento instalado'>
+                    <div class='numero'>205</div>
+                    <div class='estado'>Instalado</div>
+                </div>
+                <div class='apartamento instalado'>
+                    <div class='numero'>206</div>
+                    <div class='estado'>Instalado</div>
+                </div>
+                <div class='apartamento instalado'>
+                    <div class='numero'>207</div>
+                    <div class='estado'>Instalado</div>
+                </div>
+                <div class='apartamento instal
