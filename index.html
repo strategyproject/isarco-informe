@@ -4,65 +4,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Estado de Obra</title>
+<title>Estado de Obra - Apartamentos</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#fff;padding:20px}
-.container{max-width:1200px;margin:0 auto}
-h1{text-align:center;margin-bottom:30px;color:#333;font-size:24px}
-.piso{margin-bottom:30px}
-.piso-titulo{font-size:18px;font-weight:bold;margin-bottom:15px;color:#333;padding-left:10px;border-left:4px solid #333}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:15px;margin-bottom:20px}
-.apto{padding:20px;border-radius:8px;text-align:center;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
-.apto-num{font-size:20px;font-weight:bold;margin-bottom:8px}
-.apto-estado{font-size:14px}
-.instalado{background:#C0DD97;color:#27500A}
-.proceso{background:#FAC775;color:#633806}
-.pendiente{background:#f0f0f0;color:#888}
-.resumen{background:#f9f9f9;padding:20px;border-radius:8px;margin-top:40px}
-.resumen h2{font-size:18px;margin-bottom:15px;color:#333}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:15px}
-.stat{padding:15px;border-radius:6px;text-align:center}
-.stat-num{font-size:28px;font-weight:bold;margin-bottom:5px}
-.stat-label{font-size:14px}
-@media(max-width:600px){.grid{grid-template-columns:repeat(2,1fr);gap:10px}.apto{padding:15px}.apto-num{font-size:18px}}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background: #fff; padding: 20px; }
+.container { max-width: 1200px; margin: 0 auto; }
+h1 { text-align: center; margin-bottom: 30px; color: #333; font-size: 24px; }
+.piso { margin-bottom: 25px; }
+.piso-titulo { font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #555; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; }
+.apartamento { padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.apartamento-numero { font-weight: bold; font-size: 16px; margin-bottom: 5px; }
+.apartamento-estado { font-size: 13px; }
+.instalado { background: #C0DD97; color: #27500A; }
+.proceso { background: #FAC775; color: #633806; }
+.pendiente { background: #f0f0f0; color: #888888; }
+.contador { margin-top: 40px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+.contador-item { text-align: center; padding: 15px 25px; border-radius: 8px; min-width: 140px; }
+.contador-numero { font-size: 32px; font-weight: bold; display: block; }
+.contador-label { font-size: 14px; margin-top: 5px; }
+@media (max-width: 768px) {
+.grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 8px; }
+.apartamento { padding: 15px; }
+.apartamento-numero { font-size: 14px; }
+.apartamento-estado { font-size: 11px; }
+h1 { font-size: 20px; }
+}
 </style>
 </head>
 <body>
 <div class='container'>
-<h1>Estado de Instalaciones por Apartamento</h1>
+<h1>Estado de Instalación - Apartamentos</h1>
+<div class='pisos'>
 <div class='piso'>
-<div class='piso-titulo'>PISO 2</div>
+<div class='piso-titulo'>Información Insuficiente</div>
 <div class='grid'>
-<div class='apto pendiente'>
-<div class='apto-num'>201</div>
-<div class='apto-estado'>Pendiente</div>
-</div>
-<div class='apto pendiente'>
-<div class='apto-num'>202</div>
-<div class='apto-estado'>Pendiente</div>
+<div class='apartamento pendiente'>
+<div class='apartamento-numero'>-</div>
+<div class='apartamento-estado'>Datos incompletos</div>
 </div>
 </div>
 </div>
-<div class='piso'>
-<div class='piso-titulo'>PISO 1</div>
-<div class='grid'></div>
 </div>
-<div class='resumen'>
-<h2>Resumen General</h2>
-<div class='stats'>
-<div class='stat instalado'>
-<div class='stat-num'>0</div>
-<div class='stat-label'>Instalados</div>
+<div class='contador'>
+<div class='contador-item instalado'>
+<span class='contador-numero'>0</span>
+<div class='contador-label'>Instalados</div>
 </div>
-<div class='stat proceso'>
-<div class='stat-num'>0</div>
-<div class='stat-label'>En Proceso</div>
+<div class='contador-item proceso'>
+<span class='contador-numero'>0</span>
+<div class='contador-label'>En Proceso</div>
 </div>
-<div class='stat pendiente'>
-<div class='stat-num'>2</div>
-<div class='stat-label'>Pendientes</div>
-</div>
+<div class='contador-item pendiente'>
+<span class='contador-numero'>0</span>
+<div class='contador-label'>Pendientes</div>
 </div>
 </div>
 </div>
