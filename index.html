@@ -13,7 +13,7 @@
         }
         body {
             font-family: sans-serif;
-            background-color: #ffffff;
+            background-color: white;
             padding: 20px;
         }
         .container {
@@ -22,25 +22,25 @@
         }
         h1 {
             text-align: center;
-            color: #333;
             margin-bottom: 30px;
+            color: #333;
             font-size: 28px;
         }
-        .floor {
-            margin-bottom: 15px;
+        .piso {
+            margin-bottom: 20px;
         }
-        .floor-label {
+        .piso-titulo {
             font-weight: bold;
+            margin-bottom: 10px;
             color: #333;
-            margin-bottom: 8px;
-            font-size: 16px;
+            font-size: 18px;
         }
-        .apartments {
+        .apartamentos {
             display: grid;
             grid-template-columns: repeat(8, 1fr);
             gap: 10px;
         }
-        .apartment {
+        .apartamento {
             border: 2px solid #ddd;
             border-radius: 8px;
             padding: 15px;
@@ -50,12 +50,12 @@
             flex-direction: column;
             justify-content: center;
         }
-        .apartment-number {
+        .numero {
             font-weight: bold;
             font-size: 18px;
             margin-bottom: 5px;
         }
-        .apartment-status {
+        .estado {
             font-size: 12px;
         }
         .instalado {
@@ -70,56 +70,59 @@
             background-color: #f0f0f0;
             color: #888888;
         }
-        .summary {
+        .contador {
             margin-top: 40px;
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 40px;
             flex-wrap: wrap;
         }
-        .summary-item {
+        .contador-item {
+            text-align: center;
             padding: 15px 30px;
             border-radius: 8px;
-            text-align: center;
-            min-width: 150px;
+            border: 2px solid #ddd;
         }
-        .summary-item .count {
+        .contador-numero {
             font-size: 32px;
             font-weight: bold;
             margin-bottom: 5px;
         }
-        .summary-item .label {
+        .contador-label {
             font-size: 14px;
+            text-transform: uppercase;
         }
         @media (max-width: 768px) {
-            .apartments {
+            .apartamentos {
                 grid-template-columns: repeat(4, 1fr);
                 gap: 8px;
             }
-            .apartment {
+            .apartamento {
                 padding: 10px;
-                min-height: 70px;
+                min-height: 60px;
             }
-            .apartment-number {
-                font-size: 16px;
+            .numero {
+                font-size: 14px;
             }
-            .apartment-status {
-                font-size: 11px;
+            .estado {
+                font-size: 10px;
             }
             h1 {
+                font-size: 22px;
+            }
+            .contador {
+                gap: 20px;
+            }
+            .contador-item {
+                padding: 10px 20px;
+            }
+            .contador-numero {
                 font-size: 24px;
             }
         }
         @media (max-width: 480px) {
-            .apartments {
+            .apartamentos {
                 grid-template-columns: repeat(2, 1fr);
-            }
-            .summary {
-                gap: 15px;
-            }
-            .summary-item {
-                min-width: 120px;
-                padding: 12px 20px;
             }
         }
     </style>
@@ -127,23 +130,21 @@
 <body>
     <div class='container'>
         <h1>ISARCO - Estado de Obra</h1>
-        <div class='building'>
-            <div class='floor'>
-                <div class='floor-label'>No hay datos disponibles</div>
-            </div>
+        <div class='mensaje' style='text-align: center; color: #888; padding: 40px;'>
+            No hay datos de apartamentos disponibles
         </div>
-        <div class='summary'>
-            <div class='summary-item instalado'>
-                <div class='count'>0</div>
-                <div class='label'>Instalados</div>
+        <div class='contador'>
+            <div class='contador-item instalado'>
+                <div class='contador-numero'>0</div>
+                <div class='contador-label'>Instalados</div>
             </div>
-            <div class='summary-item en-proceso'>
-                <div class='count'>0</div>
-                <div class='label'>En proceso</div>
+            <div class='contador-item en-proceso'>
+                <div class='contador-numero'>0</div>
+                <div class='contador-label'>En Proceso</div>
             </div>
-            <div class='summary-item pendiente'>
-                <div class='count'>0</div>
-                <div class='label'>Pendientes</div>
+            <div class='contador-item pendiente'>
+                <div class='contador-numero'>0</div>
+                <div class='contador-label'>Pendientes</div>
             </div>
         </div>
     </div>
