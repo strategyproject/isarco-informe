@@ -7,90 +7,83 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:system-ui,-apple-system,sans-serif;background:#0f0f0f;color:#e0e0e0;padding:20px;line-height:1.6}
-.container{max-width:1000px;margin:0 auto}
-.header{background:linear-gradient(135deg,#1a1a2e,#16213e);padding:30px;border-radius:15px;margin-bottom:30px;text-align:center}
-.header h1{font-size:28px;margin-bottom:10px;color:#fff}
-.date{color:#9ca3af;font-size:14px}
+.container{max-width:1200px;margin:0 auto}
+header{background:linear-gradient(135deg,#1a1a2e,#16213e);padding:30px;border-radius:15px;margin-bottom:30px;text-align:center}
+h1{font-size:28px;margin-bottom:10px;color:#fff}
+.date{color:#a0a0a0;font-size:14px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-bottom:30px}
-.card{background:#1a1a1a;padding:25px;border-radius:12px;border:1px solid #2a2a2a}
-.card-title{font-size:20px;margin-bottom:15px;display:flex;align-items:center;gap:10px}
-.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:15px 0;font-size:13px}
-.stat{background:#0f0f0f;padding:10px;border-radius:8px}
-.stat-label{color:#9ca3af;font-size:11px;text-transform:uppercase}
-.stat-value{font-size:20px;font-weight:bold;color:#fff;margin-top:5px}
-.progress-bar{height:12px;background:#2a2a2a;border-radius:10px;overflow:hidden;margin-top:15px}
-.progress-fill{height:100%;transition:width 0.3s;border-radius:10px}
-.progress-text{text-align:right;margin-top:5px;font-size:13px;font-weight:bold}
-.red{background:#ef4444;color:#ef4444}
-.yellow{background:#f59e0b;color:#f59e0b}
-.green{background:#10b981;color:#10b981}
-.alerts{background:#7f1d1d;border:2px solid #dc2626;padding:20px;border-radius:12px;margin-bottom:30px}
-.alerts h2{color:#fca5a5;margin-bottom:15px;font-size:22px}
-.alert-item{background:#991b1b;padding:15px;border-radius:8px;margin-bottom:10px;border-left:4px solid #ef4444}
-.recommendations{background:#1a1a1a;padding:25px;border-radius:12px;border:1px solid #2a2a2a}
-.recommendations h2{color:#60a5fa;margin-bottom:20px;font-size:22px}
-.rec-item{background:#0f0f0f;padding:15px;border-radius:8px;margin-bottom:12px;display:flex;gap:15px}
-.rec-number{background:#2563eb;color:#fff;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0}
-@media(max-width:768px){.header h1{font-size:22px}.grid{grid-template-columns:1fr}}
+.card{background:#1a1a1a;padding:20px;border-radius:12px;border:1px solid #2a2a2a}
+.card h3{font-size:18px;margin-bottom:15px;display:flex;align-items:center;gap:8px}
+.stats{display:flex;justify-content:space-between;margin:10px 0;font-size:13px}
+.stat-label{color:#888}
+.stat-value{color:#fff;font-weight:600}
+.progress-bar{background:#2a2a2a;height:12px;border-radius:6px;overflow:hidden;margin-top:15px}
+.progress-fill{height:100%;transition:width 0.3s ease;border-radius:6px}
+.green{background:#22c55e}
+.yellow{background:#eab308}
+.red{background:#ef4444}
+.alerts{background:#2d1515;border:2px solid #ef4444;padding:20px;border-radius:12px;margin-bottom:30px}
+.alerts h2{color:#ef4444;margin-bottom:15px;display:flex;align-items:center;gap:8px}
+.alert-item{background:#1a1a1a;padding:12px;border-radius:8px;margin-bottom:10px;border-left:4px solid #ef4444}
+.recommendations{background:#1a1a1a;padding:20px;border-radius:12px;border:1px solid #2a2a2a}
+.recommendations h2{margin-bottom:15px;display:flex;align-items:center;gap:8px;color:#60a5fa}
+.rec-item{background:#0f0f0f;padding:12px;border-radius:8px;margin-bottom:10px;display:flex;gap:12px;align-items:start}
+.rec-num{background:#60a5fa;color:#000;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
+@media(max-width:768px){h1{font-size:22px}.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class='container'>
-<div class='header'>
-<h1>🏗️ Informe de Obra - Seguimiento Diario</h1>
-<div class='date'>📅 28 de Marzo de 2026 | 19:30</div>
-</div>
+<header>
+<h1>📋 Informe de Obra</h1>
+<div class='date'>📅 28 de Marzo de 2026</div>
+</header>
 
 <div class='grid'>
 <div class='card'>
-<div class='card-title'>⚡ Eléctrica</div>
-<div class='stats'>
-<div class='stat'><div class='stat-label'>Total Ítems</div><div class='stat-value'>10</div></div>
-<div class='stat'><div class='stat-label'>Completados</div><div class='stat-value'>6</div></div>
-<div class='stat'><div class='stat-label'>En Proceso</div><div class='stat-value'>2</div></div>
-<div class='stat'><div class='stat-label'>Pendientes</div><div class='stat-value'>2</div></div>
-</div>
-<div class='progress-bar'><div class='progress-fill yellow' style='width:60%'></div></div>
-<div class='progress-text yellow'>60%</div>
+<h3>🏗️ Estructura</h3>
+<div class='stats'><span class='stat-label'>Total:</span><span class='stat-value'>0</span></div>
+<div class='stats'><span class='stat-label'>Completadas:</span><span class='stat-value'>0</span></div>
+<div class='stats'><span class='stat-label'>En progreso:</span><span class='stat-value'>0</span></div>
+<div class='stats'><span class='stat-label'>Pendientes:</span><span class='stat-value'>0</span></div>
+<div class='progress-bar'><div class='progress-fill red' style='width:0%'></div></div>
+<div style='text-align:center;margin-top:8px;font-weight:600'>0%</div>
 </div>
 
 <div class='card'>
-<div class='card-title'>💧 Hidráulica</div>
-<div class='stats'>
-<div class='stat'><div class='stat-label'>Total Ítems</div><div class='stat-value'>9</div></div>
-<div class='stat'><div class='stat-label'>Completados</div><div class='stat-value'>4</div></div>
-<div class='stat'><div class='stat-label'>En Proceso</div><div class='stat-value'>1</div></div>
-<div class='stat'><div class='stat-label'>Pendientes</div><div class='stat-value'>4</div></div>
+<h3>⚡ Eléctrica</h3>
+<div class='stats'><span class='stat-label'>Total:</span><span class='stat-value'>10</span></div>
+<div class='stats'><span class='stat-label'>Completadas:</span><span class='stat-value'>6</span></div>
+<div class='stats'><span class='stat-label'>En progreso:</span><span class='stat-value'>2</span></div>
+<div class='stats'><span class='stat-label'>Pendientes:</span><span class='stat-value'>2</span></div>
+<div class='progress-bar'><div class='progress-fill green' style='width:60%'></div></div>
+<div style='text-align:center;margin-top:8px;font-weight:600;color:#22c55e'>60%</div>
 </div>
+
+<div class='card'>
+<h3>💧 Hidráulica</h3>
+<div class='stats'><span class='stat-label'>Total:</span><span class='stat-value'>9</span></div>
+<div class='stats'><span class='stat-label'>Completadas:</span><span class='stat-value'>4</span></div>
+<div class='stats'><span class='stat-label'>En progreso:</span><span class='stat-value'>1</span></div>
+<div class='stats'><span class='stat-label'>Pendientes:</span><span class='stat-value'>4</span></div>
 <div class='progress-bar'><div class='progress-fill yellow' style='width:44%'></div></div>
-<div class='progress-text yellow'>44%</div>
+<div style='text-align:center;margin-top:8px;font-weight:600;color:#eab308'>44%</div>
 </div>
 
 <div class='card'>
-<div class='card-title'>🪟 Ventanería</div>
-<div class='stats'>
-<div class='stat'><div class='stat-label'>Total Ítems</div><div class='stat-value'>3</div></div>
-<div class='stat'><div class='stat-label'>Completados</div><div class='stat-value'>2</div></div>
-<div class='stat'><div class='stat-label'>En Proceso</div><div class='stat-value'>1</div></div>
-<div class='stat'><div class='stat-label'>Pendientes</div><div class='stat-value'>0</div></div>
-</div>
-<div class='progress-bar'><div class='progress-fill yellow' style='width:67%'></div></div>
-<div class='progress-text yellow'>67%</div>
+<h3>🪟 Ventanería</h3>
+<div class='stats'><span class='stat-label'>Total:</span><span class='stat-value'>3</span></div>
+<div class='stats'><span class='stat-label'>Completadas:</span><span class='stat-value'>2</span></div>
+<div class='stats'><span class='stat-label'>En progreso:</span><span class='stat-value'>1</span></div>
+<div class='stats'><span class='stat-label'>Pendientes:</span><span class='stat-value'>0</span></div>
+<div class='progress-bar'><div class='progress-fill green' style='width:67%'></div></div>
+<div style='text-align:center;margin-top:8px;font-weight:600;color:#22c55e'>67%</div>
 </div>
 
 <div class='card'>
-<div class='card-title'>✨ Acabados</div>
-<div class='stats'>
-<div class='stat'><div class='stat-label'>Total Ítems</div><div class='stat-value'>3</div></div>
-<div class='stat'><div class='stat-label'>Completados</div><div class='stat-value'>1</div></div>
-<div class='stat'><div class='stat-label'>En Proceso</div><div class='stat-value'>1</div></div>
-<div class='stat'><div class='stat-label'>Pendientes</div><div class='stat-value'>1</div></div>
-</div>
-<div class='progress-bar'><div class='progress-fill red' style='width:33%'></div></div>
-<div class='progress-text red'>33%</div>
-</div>
-
-<div class='card'>
-<div class='card-title'>🎨 Pintura</div>
-<div class='stats'>
-<div class='stat'><div class='stat-label'>Total Ítems</div><div class='stat-value'>7
+<h3>🎨 Acabados</h3>
+<div class='stats'><span class='stat-label'>Total:</span><span class='stat-value'>3</span></div>
+<div class='stats'><span class='stat-label'>Completadas:</span><span class='stat-value'>1</span></div>
+<div class='stats'><span class='stat-label'>En progreso:</span><span class='stat-value'>1</span></div>
+<div class='stats'><span class='stat-label'>Pendientes:</span><span class='stat-value'>1</span></div>
+<div class='progress-bar'><div class='progress-fill red' style='
