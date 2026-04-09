@@ -12,7 +12,7 @@ box-sizing: border-box;
 }
 body {
 font-family: sans-serif;
-background: #ffffff;
+background-color: #ffffff;
 padding: 20px;
 }
 .container {
@@ -21,105 +21,107 @@ margin: 0 auto;
 }
 h1 {
 text-align: center;
-color: #333;
 margin-bottom: 30px;
+color: #333;
 font-size: 28px;
 }
-.floor {
+.piso {
 margin-bottom: 15px;
 }
-.floor-label {
+.piso-label {
 font-weight: bold;
-color: #333;
 margin-bottom: 8px;
+color: #333;
 font-size: 16px;
 }
-.apartments {
+.apartamentos {
 display: grid;
 grid-template-columns: repeat(8, 1fr);
 gap: 10px;
 }
-.apartment {
-border: 2px solid #ddd;
+.apartamento {
+padding: 20px 10px;
 border-radius: 8px;
-padding: 15px;
 text-align: center;
-min-height: 80px;
-display: flex;
-flex-direction: column;
-justify-content: center;
+border: 2px solid #ddd;
 }
-.apartment-number {
+.apartamento.instalado {
+background-color: #C0DD97;
+color: #27500A;
+border-color: #27500A;
+}
+.apartamento.en-proceso {
+background-color: #FAC775;
+color: #633806;
+border-color: #633806;
+}
+.apartamento.pendiente {
+background-color: #f0f0f0;
+color: #888888;
+border-color: #cccccc;
+}
+.numero {
+font-size: 20px;
 font-weight: bold;
-font-size: 18px;
 margin-bottom: 5px;
 }
-.apartment-status {
+.estado {
 font-size: 12px;
 }
-.instalado {
-background: #C0DD97;
-color: #27500A;
-}
-.en-proceso {
-background: #FAC775;
-color: #633806;
-}
-.pendiente {
-background: #f0f0f0;
-color: #888888;
-}
-.summary {
+.contador {
 margin-top: 40px;
 display: flex;
 justify-content: center;
 gap: 30px;
 flex-wrap: wrap;
 }
-.summary-item {
+.contador-item {
+text-align: center;
 padding: 15px 25px;
 border-radius: 8px;
-text-align: center;
-min-width: 150px;
+min-width: 120px;
 }
-.summary-number {
+.contador-item.instalado {
+background-color: #C0DD97;
+color: #27500A;
+}
+.contador-item.en-proceso {
+background-color: #FAC775;
+color: #633806;
+}
+.contador-item.pendiente {
+background-color: #f0f0f0;
+color: #888888;
+}
+.contador-numero {
 font-size: 32px;
 font-weight: bold;
-margin-bottom: 5px;
 }
-.summary-label {
+.contador-label {
 font-size: 14px;
+margin-top: 5px;
 }
 @media (max-width: 768px) {
-.apartments {
+.apartamentos {
 grid-template-columns: repeat(4, 1fr);
 gap: 8px;
 }
-.apartment {
-padding: 10px;
-min-height: 70px;
+.apartamento {
+padding: 15px 5px;
 }
-.apartment-number {
+.numero {
 font-size: 16px;
 }
-.apartment-status {
-font-size: 11px;
+.estado {
+font-size: 10px;
 }
 h1 {
 font-size: 22px;
 }
 }
 @media (max-width: 480px) {
-.apartments {
+.apartamentos {
 grid-template-columns: repeat(2, 1fr);
-gap: 6px;
-}
-.apartment {
-padding: 8px;
-min-height: 60px;
-}
-.apartment-number {
-font-size: 14px;
 }
 }
 </style>
@@ -127,96 +129,96 @@ font-size: 14px;
 <body>
 <div class='container'>
 <h1>ISARCO - Estado de Obra</h1>
-<div class='floor'>
-<div class='floor-label'>Piso 6</div>
-<div class='apartments'>
-<div class='apartment pendiente'><div class='apartment-number'>601</div><div class='apartment-status'>Pendiente</div></div>
-<div class='apartment instalado'><div class='apartment-number'>602</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>603</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>604</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>605</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>606</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>607</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>608</div><div class='apartment-status'>Instalado</div></div>
+<div class='piso'>
+<div class='piso-label'>Piso 6</div>
+<div class='apartamentos'>
+<div class='apartamento pendiente'><div class='numero'>601</div><div class='estado'>Pendiente</div></div>
+<div class='apartamento instalado'><div class='numero'>602</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>603</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>604</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>605</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>606</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>607</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>608</div><div class='estado'>Instalado</div></div>
 </div>
 </div>
-<div class='floor'>
-<div class='floor-label'>Piso 5</div>
-<div class='apartments'>
-<div class='apartment pendiente'><div class='apartment-number'>501</div><div class='apartment-status'>Pendiente</div></div>
-<div class='apartment pendiente'><div class='apartment-number'>502</div><div class='apartment-status'>Pendiente</div></div>
-<div class='apartment instalado'><div class='apartment-number'>503</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>504</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>505</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>506</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>507</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>508</div><div class='apartment-status'>Instalado</div></div>
+<div class='piso'>
+<div class='piso-label'>Piso 5</div>
+<div class='apartamentos'>
+<div class='apartamento pendiente'><div class='numero'>501</div><div class='estado'>Pendiente</div></div>
+<div class='apartamento pendiente'><div class='numero'>502</div><div class='estado'>Pendiente</div></div>
+<div class='apartamento instalado'><div class='numero'>503</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>504</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>505</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>506</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>507</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>508</div><div class='estado'>Instalado</div></div>
 </div>
 </div>
-<div class='floor'>
-<div class='floor-label'>Piso 4</div>
-<div class='apartments'>
-<div class='apartment en-proceso'><div class='apartment-number'>401</div><div class='apartment-status'>En proceso</div></div>
-<div class='apartment pendiente'><div class='apartment-number'>402</div><div class='apartment-status'>Pendiente</div></div>
-<div class='apartment pendiente'><div class='apartment-number'>403</div><div class='apartment-status'>Pendiente</div></div>
-<div class='apartment instalado'><div class='apartment-number'>404</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>405</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>406</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>407</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>408</div><div class='apartment-status'>Instalado</div></div>
+<div class='piso'>
+<div class='piso-label'>Piso 4</div>
+<div class='apartamentos'>
+<div class='apartamento en-proceso'><div class='numero'>401</div><div class='estado'>En proceso</div></div>
+<div class='apartamento pendiente'><div class='numero'>402</div><div class='estado'>Pendiente</div></div>
+<div class='apartamento pendiente'><div class='numero'>403</div><div class='estado'>Pendiente</div></div>
+<div class='apartamento instalado'><div class='numero'>404</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>405</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>406</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>407</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>408</div><div class='estado'>Instalado</div></div>
 </div>
 </div>
-<div class='floor'>
-<div class='floor-label'>Piso 3</div>
-<div class='apartments'>
-<div class='apartment en-proceso'><div class='apartment-number'>301</div><div class='apartment-status'>En proceso</div></div>
-<div class='apartment instalado'><div class='apartment-number'>302</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment en-proceso'><div class='apartment-number'>303</div><div class='apartment-status'>En proceso</div></div>
-<div class='apartment en-proceso'><div class='apartment-number'>304</div><div class='apartment-status'>En proceso</div></div>
-<div class='apartment instalado'><div class='apartment-number'>305</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>306</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>307</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>308</div><div class='apartment-status'>Instalado</div></div>
+<div class='piso'>
+<div class='piso-label'>Piso 3</div>
+<div class='apartamentos'>
+<div class='apartamento en-proceso'><div class='numero'>301</div><div class='estado'>En proceso</div></div>
+<div class='apartamento instalado'><div class='numero'>302</div><div class='estado'>Instalado</div></div>
+<div class='apartamento en-proceso'><div class='numero'>303</div><div class='estado'>En proceso</div></div>
+<div class='apartamento en-proceso'><div class='numero'>304</div><div class='estado'>En proceso</div></div>
+<div class='apartamento instalado'><div class='numero'>305</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>306</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>307</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>308</div><div class='estado'>Instalado</div></div>
 </div>
 </div>
-<div class='floor'>
-<div class='floor-label'>Piso 2</div>
-<div class='apartments'>
-<div class='apartment instalado'><div class='apartment-number'>201</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment pendiente'><div class='apartment-number'>202</div><div class='apartment-status'>Pendiente</div></div>
-<div class='apartment instalado'><div class='apartment-number'>203</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>204</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>205</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>206</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>207</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>208</div><div class='apartment-status'>Instalado</div></div>
+<div class='piso'>
+<div class='piso-label'>Piso 2</div>
+<div class='apartamentos'>
+<div class='apartamento instalado'><div class='numero'>201</div><div class='estado'>Instalado</div></div>
+<div class='apartamento pendiente'><div class='numero'>202</div><div class='estado'>Pendiente</div></div>
+<div class='apartamento instalado'><div class='numero'>203</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>204</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>205</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>206</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>207</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>208</div><div class='estado'>Instalado</div></div>
 </div>
 </div>
-<div class='floor'>
-<div class='floor-label'>Piso 1</div>
-<div class='apartments'>
-<div class='apartment instalado'><div class='apartment-number'>101</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>102</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>103</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>104</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>105</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>106</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>107</div><div class='apartment-status'>Instalado</div></div>
-<div class='apartment instalado'><div class='apartment-number'>108</div><div class='apartment-status'>Instalado</div></div>
+<div class='piso'>
+<div class='piso-label'>Piso 1</div>
+<div class='apartamentos'>
+<div class='apartamento instalado'><div class='numero'>101</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>102</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>103</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>104</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>105</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>106</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>107</div><div class='estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='numero'>108</div><div class='estado'>Instalado</div></div>
 </div>
 </div>
-<div class='summary'>
-<div class='summary-item instalado'>
-<div class='summary-number'>38</div>
-<div class='summary-label'>Instalados</div>
+<div class='contador'>
+<div class='contador-item instalado'>
+<div class='contador-numero'>36</div>
+<div class='contador-label'>Instalados</div>
 </div>
-<div class='summary-item en-proceso'>
-<div class='summary-number'>4</div>
-<div class='summary-label'>En Proceso</div>
+<div class='contador-item en-proceso'>
+<div class='contador-numero'>4</div>
+<div class='contador-label'>En proceso</div>
 </div>
-<div class='summary-item pendiente'>
-<div class='summary-number'>6</div>
-<div class='summary-label'>Pendientes</div>
+<div class='contador-item pendiente'>
+<div class='contador-numero'>8</div>
+<div class='contador-label'>Pendientes</div>
 </div>
 </div>
 </div>
