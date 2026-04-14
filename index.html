@@ -5,131 +5,206 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <title>ISARCO - Estado de Obra</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:sans-serif;background:#fff;padding:20px}
-.container{max-width:1200px;margin:0 auto}
-h1{text-align:center;margin-bottom:30px;color:#333;font-size:28px}
-.floor{margin-bottom:15px}
-.floor-label{font-weight:bold;margin-bottom:8px;color:#333;font-size:18px}
-.apartments{display:grid;grid-template-columns:repeat(8,1fr);gap:10px}
-.apt{padding:15px;border-radius:8px;text-align:center;min-height:80px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
-.apt-number{font-weight:bold;font-size:18px;margin-bottom:5px}
-.apt-status{font-size:13px}
-.instalado{background:#C0DD97;color:#27500A}
-.en-proceso{background:#FAC775;color:#633806}
-.pendiente{background:#f0f0f0;color:#888888}
-.summary{margin-top:40px;display:flex;justify-content:center;gap:30px;flex-wrap:wrap}
-.summary-item{text-align:center;padding:15px 25px;border-radius:8px;min-width:150px}
-.summary-count{font-size:32px;font-weight:bold;margin-bottom:5px}
-.summary-label{font-size:14px}
-@media(max-width:768px){
-.apartments{grid-template-columns:repeat(4,1fr);gap:8px}
-.apt{padding:10px;min-height:70px}
-.apt-number{font-size:16px}
-.apt-status{font-size:11px}
-h1{font-size:22px}
-.summary{gap:15px}
-.summary-item{min-width:120px;padding:12px 20px}
-.summary-count{font-size:28px}
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
-@media(max-width:480px){
-.apartments{grid-template-columns:repeat(2,1fr)}
+body {
+font-family: 'Arial', 'Helvetica', sans-serif;
+background-color: #ffffff;
+padding: 20px;
+}
+.container {
+max-width: 1200px;
+margin: 0 auto;
+}
+h1 {
+text-align: center;
+color: #333;
+margin-bottom: 30px;
+font-size: 28px;
+}
+.piso-row {
+display: flex;
+gap: 10px;
+margin-bottom: 15px;
+align-items: center;
+}
+.piso-label {
+font-weight: bold;
+color: #333;
+min-width: 80px;
+font-size: 16px;
+}
+.apartamentos {
+display: flex;
+gap: 10px;
+flex-wrap: wrap;
+flex: 1;
+}
+.apartamento {
+flex: 1;
+min-width: 100px;
+padding: 20px 10px;
+border-radius: 8px;
+text-align: center;
+border: 2px solid #ddd;
+}
+.apartamento-numero {
+font-size: 18px;
+font-weight: bold;
+margin-bottom: 5px;
+}
+.apartamento-estado {
+font-size: 12px;
+}
+.instalado {
+background-color: #C0DD97;
+color: #27500A;
+border-color: #27500A;
+}
+.en-proceso {
+background-color: #FAC775;
+color: #633806;
+border-color: #633806;
+}
+.pendiente {
+background-color: #f0f0f0;
+color: #888888;
+border-color: #888888;
+}
+.contador {
+margin-top: 40px;
+display: flex;
+justify-content: center;
+gap: 40px;
+flex-wrap: wrap;
+}
+.contador-item {
+text-align: center;
+padding: 15px 30px;
+border-radius: 8px;
+min-width: 150px;
+}
+.contador-numero {
+font-size: 32px;
+font-weight: bold;
+margin-bottom: 5px;
+}
+.contador-label {
+font-size: 14px;
+}
+@media (max-width: 768px) {
+.piso-row {
+flex-direction: column;
+align-items: flex-start;
+}
+.piso-label {
+margin-bottom: 10px;
+}
+.apartamento {
+min-width: calc(50% - 5px);
+}
+.contador {
+gap: 20px;
+}
 }
 </style>
 </head>
 <body>
 <div class='container'>
 <h1>ISARCO - Estado de Obra</h1>
-<div class='floor'>
-<div class='floor-label'>Piso 6</div>
-<div class='apartments'>
-<div class='apt pendiente'><div class='apt-number'>601</div><div class='apt-status'>Pendiente</div></div>
-<div class='apt instalado'><div class='apt-number'>602</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>603</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>604</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>605</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>606</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>607</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>608</div><div class='apt-status'>Instalado</div></div>
+<div class='piso-row'>
+<div class='piso-label'>Piso 6</div>
+<div class='apartamentos'>
+<div class='apartamento pendiente'><div class='apartamento-numero'>601</div><div class='apartamento-estado'>Pendiente</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>602</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>603</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>604</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>605</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>606</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>607</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>608</div><div class='apartamento-estado'>Instalado</div></div>
 </div>
 </div>
-<div class='floor'>
-<div class='floor-label'>Piso 5</div>
-<div class='apartments'>
-<div class='apt pendiente'><div class='apt-number'>501</div><div class='apt-status'>Pendiente</div></div>
-<div class='apt pendiente'><div class='apt-number'>502</div><div class='apt-status'>Pendiente</div></div>
-<div class='apt instalado'><div class='apt-number'>503</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>504</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>505</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>506</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>507</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>508</div><div class='apt-status'>Instalado</div></div>
+<div class='piso-row'>
+<div class='piso-label'>Piso 5</div>
+<div class='apartamentos'>
+<div class='apartamento pendiente'><div class='apartamento-numero'>501</div><div class='apartamento-estado'>Pendiente</div></div>
+<div class='apartamento pendiente'><div class='apartamento-numero'>502</div><div class='apartamento-estado'>Pendiente</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>503</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>504</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>505</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>506</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>507</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>508</div><div class='apartamento-estado'>Instalado</div></div>
 </div>
 </div>
-<div class='floor'>
-<div class='floor-label'>Piso 4</div>
-<div class='apartments'>
-<div class='apt en-proceso'><div class='apt-number'>401</div><div class='apt-status'>En proceso</div></div>
-<div class='apt pendiente'><div class='apt-number'>402</div><div class='apt-status'>Pendiente</div></div>
-<div class='apt pendiente'><div class='apt-number'>403</div><div class='apt-status'>Pendiente</div></div>
-<div class='apt instalado'><div class='apt-number'>404</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>405</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>406</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>407</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>408</div><div class='apt-status'>Instalado</div></div>
+<div class='piso-row'>
+<div class='piso-label'>Piso 4</div>
+<div class='apartamentos'>
+<div class='apartamento en-proceso'><div class='apartamento-numero'>401</div><div class='apartamento-estado'>En proceso</div></div>
+<div class='apartamento pendiente'><div class='apartamento-numero'>402</div><div class='apartamento-estado'>Pendiente</div></div>
+<div class='apartamento pendiente'><div class='apartamento-numero'>403</div><div class='apartamento-estado'>Pendiente</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>404</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>405</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>406</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>407</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>408</div><div class='apartamento-estado'>Instalado</div></div>
 </div>
 </div>
-<div class='floor'>
-<div class='floor-label'>Piso 3</div>
-<div class='apartments'>
-<div class='apt en-proceso'><div class='apt-number'>301</div><div class='apt-status'>En proceso</div></div>
-<div class='apt instalado'><div class='apt-number'>302</div><div class='apt-status'>Instalado</div></div>
-<div class='apt en-proceso'><div class='apt-number'>303</div><div class='apt-status'>En proceso</div></div>
-<div class='apt en-proceso'><div class='apt-number'>304</div><div class='apt-status'>En proceso</div></div>
-<div class='apt instalado'><div class='apt-number'>305</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>306</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>307</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>308</div><div class='apt-status'>Instalado</div></div>
+<div class='piso-row'>
+<div class='piso-label'>Piso 3</div>
+<div class='apartamentos'>
+<div class='apartamento en-proceso'><div class='apartamento-numero'>301</div><div class='apartamento-estado'>En proceso</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>302</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento en-proceso'><div class='apartamento-numero'>303</div><div class='apartamento-estado'>En proceso</div></div>
+<div class='apartamento en-proceso'><div class='apartamento-numero'>304</div><div class='apartamento-estado'>En proceso</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>305</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>306</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>307</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>308</div><div class='apartamento-estado'>Instalado</div></div>
 </div>
 </div>
-<div class='floor'>
-<div class='floor-label'>Piso 2</div>
-<div class='apartments'>
-<div class='apt instalado'><div class='apt-number'>201</div><div class='apt-status'>Instalado</div></div>
-<div class='apt pendiente'><div class='apt-number'>202</div><div class='apt-status'>Pendiente</div></div>
-<div class='apt instalado'><div class='apt-number'>203</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>204</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>205</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>206</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>207</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>208</div><div class='apt-status'>Instalado</div></div>
+<div class='piso-row'>
+<div class='piso-label'>Piso 2</div>
+<div class='apartamentos'>
+<div class='apartamento instalado'><div class='apartamento-numero'>201</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento pendiente'><div class='apartamento-numero'>202</div><div class='apartamento-estado'>Pendiente</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>203</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>204</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>205</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>206</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>207</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>208</div><div class='apartamento-estado'>Instalado</div></div>
 </div>
 </div>
-<div class='floor'>
-<div class='floor-label'>Piso 1</div>
-<div class='apartments'>
-<div class='apt instalado'><div class='apt-number'>101</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>102</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>103</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>104</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>105</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>106</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>107</div><div class='apt-status'>Instalado</div></div>
-<div class='apt instalado'><div class='apt-number'>108</div><div class='apt-status'>Instalado</div></div>
+<div class='piso-row'>
+<div class='piso-label'>Piso 1</div>
+<div class='apartamentos'>
+<div class='apartamento instalado'><div class='apartamento-numero'>101</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>102</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>103</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>104</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>105</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>106</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>107</div><div class='apartamento-estado'>Instalado</div></div>
+<div class='apartamento instalado'><div class='apartamento-numero'>108</div><div class='apartamento-estado'>Instalado</div></div>
 </div>
 </div>
-<div class='summary'>
-<div class='summary-item instalado'>
-<div class='summary-count'>37</div>
-<div class='summary-label'>Instalados</div>
+<div class='contador'>
+<div class='contador-item instalado'>
+<div class='contador-numero'>38</div>
+<div class='contador-label'>Instalados</div>
 </div>
-<div class='summary-item en-proceso'>
-<div class='summary-count'>4</div>
-<div class='summary-label'>En proceso</div>
+<div class='contador-item en-proceso'>
+<div class='contador-numero'>4</div>
+<div class='contador-label'>En proceso</div>
 </div>
-<div class='summary-item pendiente'>
-<div class='summary-count'>7</div>
-<div class='summary-label'>Pendientes</div>
+<div class='contador-item pendiente'>
+<div class='contador-numero'>6</div>
+<div class='contador-label'>Pendientes</div>
 </div>
 </div>
 </div>
